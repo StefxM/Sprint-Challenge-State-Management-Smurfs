@@ -8,6 +8,9 @@ const initialState = {
 
 export const reducer = ( state = initialState, action) => {
     switch (action.type) {
+        case "ADD_SMURF":
+            return [...state, {smurf: action.payload, error: '', isFetching: false}]
+        
         case FETCH_SMURF_START:
             return {
                 ...state,
