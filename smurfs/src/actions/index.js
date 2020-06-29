@@ -11,9 +11,9 @@ const headers = {
 export const getSmurf = () => dispatch => {
     dispatch({FETCH_SMURF_START});
     axios
-        .get("https://localhost:3333/smurfs", {headers})
+        .get("localhost:3333/smurfs", {headers})
         .then(res => {
-            console.log(res.data);
+            console.log(res);
             dispatch({type:FETCH_SMURF_SUCCESS,payload:res.data})
         })
         .catch(err => {

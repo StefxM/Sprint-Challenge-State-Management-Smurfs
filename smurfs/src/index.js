@@ -8,12 +8,9 @@ import { reducer } from "./reducers/index";
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 
-const logger = () => next => action => {
-    console.log("dispatching action:", action);
-    next(action);
-};
 
-const store= createStore(reducer, applyMiddleware(logger, thunk));
+
+const store= createStore(reducer, applyMiddleware(thunk));
 
 ReactDOM.render(
     <Provider store={store}>
