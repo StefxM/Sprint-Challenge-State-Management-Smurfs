@@ -14,6 +14,7 @@ const headers = {
 
 export const SubmitForm = (form) => dispatch => {
     dispatch({type: NEW_SMURF});
+    console.log(form);
     axios
         .post("http://localhost:3333/smurfs", form)
         .then((response) => console.log(response))
